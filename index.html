@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<title> new tab page </title>
+<link rel=icon href=/img/favicon.png type=image/png />
+<link rel=stylesheet type=text/css href=css/main.css>
+<link rel=stylesheet type=text/css href=css/sparkly.css>
+<script type=text/javascript src=js/jquery-2.1.1.min.js></script>
+<script type=text/javascript src=js/jqueryui-1.11.1/jquery-ui.js></script>
+<script type=text/javascript src="js/main.js"></script>
+<script type=text/javascript src="js/yui-min.js"></script>
+<script type=text/javascript src="js/sparkly.js"></script>
+<script type=text/javascript src="js/confetti.js"></script>
+</head>
+
+<body id="body">   
+    
+<div id="weeks_container">
+    <div id="weeks_view">
+    <div id="day1" class="weekday"><a>monday</a><a id="day1date">1 jan</a><ul id="day1ul" class="daylist"></ul></div>
+    <div id="day2" class="weekday"><a>tuesday</a><a id="day2date">2 jan</a><ul id="day2ul" class="daylist"></ul></div>
+    <div id="day3" class="weekday"><a>wednesday</a><a id="day3date">3 jan</a><ul id="day3ul" class="daylist"></ul></div>
+    <div id="day4" class="weekday"><a>thursday</a><a id="day4date">4 jan</a><ul id="day4ul" class="daylist"></ul></div>
+    <div id="day5" class="weekday"><a>friday</a><a id="day5date">5 jan</a><ul id="day5ul" class="daylist"></ul></div>
+    <div id="day6" class="weekday"><a>saturday</a><a id="day6date">6 jan</a><ul id="day6ul" class="daylist"></ul></div>
+    <div id="day7" class="weekday"><a>sunday</a><a id="day7date">7 jan</a><ul id="day7ul" class="daylist"></ul></div>
+    </div>
+    
+    <div id="weeks_buttons">
+        <div id="weeks_left"><a><</a></div>
+        <div id="weeks_add"><a>+</a></div>
+        <div id="weeks_remove"><a>_</a></div>
+        <div id="weeks_zoom"><a>=</a></div>
+        <div id="weeks_right"><a>></a></div>
+    </div>
+
+    
+</div>
+
+<div id="edit_container">
+    <div id="edit">
+        <div id="title"> <a> edit bookmarks </a></div>
+        <div id="editSection1">
+            
+            <div>
+                <div>
+                    <input id="edit_1-1a" type="text" placeholder="label">
+                    <input id="edit_1-1b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_1-2a" type="text" placeholder="label">
+                    <input id="edit_1-2b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_1-3a" type="text" placeholder="label">
+                    <input id="edit_1-3b" type="text" placeholder="url">
+                </div>
+            </div>
+        
+            <div>
+                <div>
+                    <input id="edit_1-4a" type="text" placeholder="label">
+                    <input id="edit_1-4b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_1-5a" type="text" placeholder="label">
+                    <input id="edit_1-5b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_1-6a" type="text" placeholder="label">
+                    <input id="edit_1-6b" type="text" placeholder="url">
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <input id="edit_1-7a" type="text" placeholder="label">
+                    <input id="edit_1-7b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_1-8a" type="text" placeholder="label">
+                    <input id="edit_1-8b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_1-9a" type="text" placeholder="label">
+                    <input id="edit_1-9b" type="text" placeholder="url">
+                </div>
+            </div>
+        
+        </div>
+        <div id="editSection2">
+        
+            <div>
+                <div>
+                    <input id="edit_2-1a" type="text" placeholder="label">
+                    <input id="edit_2-1b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_2-2a" type="text" placeholder="label">
+                    <input id="edit_2-2b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_2-3a" type="text" placeholder="label">
+                    <input id="edit_2-3b" type="text" placeholder="url">
+                </div>
+            </div>
+        
+            <div>
+                <div>
+                    <input id="edit_2-4a" type="text" placeholder="label">
+                    <input id="edit_2-4b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_2-5a" type="text" placeholder="label">
+                    <input id="edit_2-5b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_2-6a" type="text" placeholder="label">
+                    <input id="edit_2-6b" type="text" placeholder="url">
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <input id="edit_2-7a" type="text" placeholder="label">
+                    <input id="edit_2-7b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_2-8a" type="text" placeholder="label">
+                    <input id="edit_2-8b" type="text" placeholder="url">
+                </div>
+                <div>
+                    <input id="edit_2-9a" type="text" placeholder="label">
+                    <input id="edit_2-9b" type="text" placeholder="url">
+                </div>
+            </div>
+        
+        </div>
+        
+        <div id="bookmarkSubmit"><a>submit</a></div>
+        
+    </div>
+</div>
+    
+<div id="melody"></div>
+<div id="bubble1" class="bubble"><a>eep~</a></div>
+<div id="bubble2" class="bubble"><a>owie~</a></div>
+<div id="bubble3" class="bubble"><a>hey~</a></div>
+<div id="bubble4" class="bubble"><a>ouch~</a></div>
+<div id="bubble5" class="bubble"><a>ooh~</a></div>
+<div id="bubble6" class="bubble"><a>ah~</a></div>
+<div id="bubble7" class="bubble"><a>stop that~</a></div>
+<div id="bubble8" class="bubble"><a>that tickles~</a></div>
+<div id="bubble9" class="bubble"><a>im ticklish~</a></div>
+
+
+<div id="add_dialogue_container">
+    <div id="add_dialogue">
+        <div id="title"> <a> add a new event </a><a id="tdlExitButton">X</a></div>
+        <input id="tdlDateInput" type="date">
+        <input id="tdlTextInput" type="text">
+        <div id="tdlAcceptButton"><a>+</a></div>
+    </div>
+</div>
+    
+<div id="settings_container">
+    <div id="settings">
+        <div id="title"> <a> settings </a><a id="settingsExitButton">X</a></div>
+        <label for="importFile" id="importButton"><a>import data</a></label>
+        <input type="file" name="pic" id="importFile" accept=".json" style="display:none; height: 0px;">
+        <div id="exportButton"><a>export data</a></div>
+        <div id="bookmarkEdit"><a>edit bookmarks</a></div>
+    </div>
+</div>
+
+<main id="main">
+    
+    
+    <div id="filter"></div>
+    
+    <div id="clock_container">
+    
+        <div id="display">
+            <div id="clock">
+                <p id="time"> 00:00 </p>
+            </div>
+
+            <div id="calendar">
+                <p id="day">00</p>
+                <p id="month">NAN</p>
+            </div> 
+
+        </div>
+
+        <div id="holder1" class="holder"><a></a><ul id="section1"></ul></div>
+        <div id="holder2" class="holder"><a></a><ul id="section2"></ul></div>   
+        
+    </div>
+    
+    <div id="tdl_container">
+        
+        <div id="boy">
+        <div id="current_tdl">
+            <div id="title"> <a id="title_text"></a> </div>
+            <div id="tdl_holder"> <ul id="tdl_current_day"></ul> </div>
+        </div>
+        
+        <div id="tdl_buttons">
+            <div id="tdl_add"><a>+</a></div>
+            <div id="tdl_remove"><a>_</a></div>
+            <div id="tdl_zoom"><a>=</a></div>
+        </div>
+                              
+        </div>
+    
+    </div>
+    
+<div id="birthday"></div>     
+    
+</main>
+    
+    
+    
+</body>
+</html>

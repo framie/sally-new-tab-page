@@ -1,0 +1,978 @@
+/*http://www.fontsquirrel.com/tools/webfont-generator*/
+
+@font-face {
+    font-family: 'extravaganzzaregular';
+    src: url('extravaganzza-webfont.eot');
+    src: url('extravaganzza-webfont.eot?#iefix') format('embedded-opentype'),
+         url('extravaganzza-webfont.woff2') format('woff2'),
+         url('extravaganzza-webfont.woff') format('woff'),
+         url('extravaganzza-webfont.ttf') format('truetype'),
+         url('extravaganzza-webfont.svg#extravaganzzaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ralewaythin';
+    src: url('raleway_thin-webfont.eot');
+    src: url('raleway_thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway_thin-webfont.woff2') format('woff2'),
+         url('raleway_thin-webfont.woff') format('woff'),
+         url('raleway_thin-webfont.ttf') format('truetype'),
+         url('raleway_thin-webfont.svg#ralewaythin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+html  {
+
+    min-height: 100%;
+
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(224,180,180,0.2) 30%,rgba(138,114,76,0) 40%), -webkit-radial-gradient(100% 0%, ellipse cover, rgba(160,160,224,0.2) 10%,rgba(138,114,76,0) 40%), linear-gradient(135deg, rgb(254,237,245) 40%,rgb(190,225,255) 100%);
+    
+/*    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(224,160,160,0.6) 10%,rgba(138,114,76,0) 90%), linear-gradient(to bottom, rgba(254,237,245,.25) 0%,rgba(254,237,245,.4) 100%), linear-gradient(135deg, rgb(254,237,245) 0%,rgb(190,225,255) 50%);  */
+  
+}
+
+
+
+
+
+
+
+
+
+* {
+    cursor: default !important;
+    margin: 0px;
+    padding: 0px;
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(70,70,70,0.4); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(70,70,70,0.6); 
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+[class|="confetti"] {
+  position: absolute;
+}
+
+.red {
+  background-color: #E94A3F;
+}
+
+.yellow {
+  background-color: #FAA040;
+}
+
+.blue {
+  background-color: #5FC9F5;
+}
+
+
+body{
+    position: fixed !important;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: top;
+/*    background-color: rgb(255,225,255);*/
+/*    background-color: rgb(254,237,245);*/
+/*    background-image:url(../user/bg.png);  */
+    overflow: hidden;
+
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+video{
+    z-index: -1 !important;
+    position: absolute;
+    
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    
+}
+
+div#melody{
+    z-index: 1; 
+    position: fixed;
+    bottom: 0px;
+    left: -20px;
+    height: 604px;
+    width: 398px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image:url(../img/yo.png);
+    
+}
+
+div#melody.resize {
+    height: 604px;
+    width: auto;
+}
+
+div#birthday {
+    z-index: -1;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    height: 400px;
+}
+
+div#birthday > img {
+    z-index: -1;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.6;
+}
+
+div#melody.owie {
+    background-image:url(../img/yo2.png);
+}
+
+div.bubble {
+    position: fixed;
+    top: 200px;
+    left: 300px;
+    height: 86px;
+    width: 137px;
+    background-image:url(../img/bubble.png);
+    animation-duration: 1.5s;
+    animation-name: bubble_in_out;
+    opacity: 0;
+    display: none;
+}
+
+div.bubble > a {
+    font-family: 'ralewaythin';
+    font-weight: bolder;
+    margin-top: 34px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 17px
+}
+
+@keyframes bubble_in_out {
+    from {
+        margin-left: -3%;
+        transform: rotate(-20deg);
+        opacity: 1;
+    }
+    
+    20% {
+        margin-left: 0%;
+        transform: rotate(0deg);
+    }
+
+    60% {
+        opacity: 1;
+        margin-top: 0%;
+        transform: rotate(0deg);
+    }
+    
+    to {
+        opacity: 0;
+        margin-top: 2%;
+        transform: rotate(-10deg);
+    }
+}
+
+div#filter{
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,0); 
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.6) inset;    
+}
+
+#clock_container {
+    float: left;
+    width: 100%;
+    height: 100vh;
+    //background-color: black;
+}
+
+/* =========================================================================== */
+
+#display{
+    transition: 1s ease-in-out;
+    //margin: 15vh auto auto auto;
+    margin: 15vh auto auto auto;
+    width: 300px;
+    height: 110px;
+    background-color: rgba(250,250,250,0.9);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2); 
+    //border: 1px solid rgba(250,250,250,0.6);
+}
+
+#clock{
+    float: left;
+    height: 100px;
+    width: 185px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#calendar{
+    transition: 1s ease-in-out;
+    float: left;
+    height: 110px;
+    width: 110px;
+    margin-top: 0px;
+    background-color: rgba(250,250,250,0.9);
+}
+
+#time, #day, #month, .holder>p{
+    font-family: 'ralewaythin';
+    text-align: center;
+    font-weight: bolder;
+}
+
+#time{
+    transition: 1s ease-in-out;
+    line-height: 100px; 
+    font-size: 65px;
+    color: rgba(70,70,70,0.8);
+}
+
+#day{
+    transition: 1s ease-in-out;
+    line-height: 70px; 
+    font-size: 50px;
+    color: rgba(70,70,70,0.8);
+}
+
+#month{
+    transition: 1s ease-in-out;
+    line-height: 10px; 
+    font-size: 26px;
+    color: rgba(70,70,70,0.8);   
+}
+
+.holder{
+    transition: 0.5s ease-in-out;
+    margin: 110px auto auto auto;   
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    //border: 1px solid rgba(250,250,250,0.6);
+    background-color: rgba(250,250,250,0.9);    
+    line-height: 40px; 
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.3); 
+}
+
+.holder>a{
+    transition: 0.5s ease-in-out;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    height: 30px;
+}
+
+.holder:hover{
+    margin: 40px auto auto auto;
+    height: 180px; 
+    width: 480px;
+    border-radius: 0px;
+    //border: 1px solid rgba(250,250,250,0);
+}
+
+.holder ul{
+    transition: 0.5s ease-in-out;
+    list-style: none;
+}
+
+.holder li{
+    transition: 0.5s ease-in-out;
+    float: left;
+    text-align: center;
+    width: 0px;
+    height: 0px;  
+    opacity: 0;
+}
+
+.holder li>a{
+    font-family: 'ralewaythin';
+    display: block;
+    transition: 0.5s ease-in-out;
+    color: rgba(70,70,70,0.8); 
+    text-decoration: none;
+    cursor: pointer;    
+    font-size: 0px;
+    line-height: 0px;  
+    font-weight: bold;
+}
+
+#section1 li>a:hover{
+/*    background-color: rgba(190,225,255,0.4);*/
+    background-color: rgba(254,237,245,1);
+}
+
+#section2 li>a:hover{
+    background-color: rgba(190,225,255,0.4);
+/*    background-color: rgba(254,237,245,1);*/
+}
+
+
+/* =========================================================================== */
+
+
+#tdl_container {
+    position: fixed;
+    transition: 1s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    //background-color: black;
+    pointer-events: none;
+}
+
+#boy {
+    float: right;
+    height: auto;
+    width: 250px;
+    pointer-events: none;
+}
+
+#current_tdl {
+    pointer-events: all;
+    float: right;
+    margin: 15vh 4vw auto auto;
+    transition: 1s ease-in-out;
+    width: 250px;
+    height: auto;
+    
+    background-color: rgba(250,250,250,0.9);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2); 
+    //border: 1px solid rgba(250,250,250,0.6);
+}
+
+#title {
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+}
+
+#title>a {
+    float: left;
+    line-height: 40px;
+    height: 100%;
+    width: 100%;
+    font-family: 'ralewaythin';
+    text-align: center;
+    font-weight: bolder;
+    color: rgba(70,70,70,0.8); 
+    font-size: 25px;
+}
+
+div#tdl_holder {
+    float:left;
+    height: auto;
+    width: 100%;
+}
+
+ul#tdl_current_day {
+    transition: 1s ease-in-out;
+    float: left;
+    height: auto;
+    max-height: 335px;
+    width: 100%;
+    padding-top: 5px;
+    transition: 0.5s ease-in-out;
+    list-style-position: inside;
+    list-style-type: none;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+ul#tdl_current_day>li {
+    transition: 0.5s ease-in-out;
+    height: auto;
+    float: left;
+    width: 86%;
+    padding-left: 10%;
+    padding-right: 4%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+ul#tdl_current_day>li.remove:hover {
+    background-color: rgba(250, 150, 150, 0.8);
+}
+
+ul#tdl_current_day>li a {
+    font-family: 'ralewaythin';
+    color: rgba(70,70,70,0.8);  
+    font-size: 17px;
+}
+
+a.listy {
+    float: left;
+    font-size: 8px !important;
+    opacity: 0.5;
+    line-height: 20px;
+    margin-left: -17px;
+}
+
+a#free_text {
+    padding-top: 5px;
+    float: left;
+    width: 94%;
+    font-family: 'ralewaythin';
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 20px;
+    font-size: 17px;
+}
+
+div#tdl_buttons {
+    pointer-events: all;
+    transition: 1s ease-in-out;
+    margin-top: 1px;
+    float: right;
+    width: 250px;
+    height: 25px;
+    margin-right: 4vw;
+}
+
+div#tdl_buttons>div {
+    transition: 0.5s ease-in-out;
+    margin-left: 0px;
+    float: left;
+    //background-color: rgba(250,250,250,0.9);
+    background-color: rgba(230,230,230,0.9);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2); 
+    width: 83.3px;
+    height: 25px;
+    z-index: -1;
+    //border-radius: 0px 0px 10px 10px;
+}
+
+div#tdl_buttons a {
+    float: left;
+    width: 100%;
+    font-family: 'extravaganzza';
+    color: rgba(70,70,70,0.8); 
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+}
+
+div#tdl_remove a {
+    line-height: 5px;
+}
+
+div#tdl_remove:hover, div#tdl_add:hover, div#tdl_zoom:hover {
+/*    background-color: rgba(254,237,245,1); */
+    background-color: rgba(230,230,230,0.9);
+    background-color: rgba(250,250,250,0.9);    
+}
+
+div#tdl_remove.selected {
+    background-color: rgba(250, 200, 200, 0.9);
+}
+
+div#tdl_add.selected {
+    background-color: rgba(200, 250, 200, 0.9);
+}
+
+/* =========================================================================== */
+
+div#add_dialogue_container {
+    transition: 0.5s ease;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 100vw;
+    pointer-events: none;
+    z-index: 99;
+}
+
+div#add_dialogue {
+    z-index: 99;
+    transition: 1s ease-in-out;
+    margin-top: 40vh;
+    width: 450px;
+    height: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(250,250,250,1.0);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2); 
+    pointer-events: all;
+}
+
+div#add_dialogue>div#title>a {
+    display: block;
+    float: none;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#add_dialogue>div#title>a:last-child {
+    transition: 0.5s ease-in-out;
+    margin-top: -40px;
+    float: right;
+    line-height: 29px;
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
+}
+
+div#add_dialogue>input {
+    margin-top: 10px;
+    display: block;
+    float: none;
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    text-align: center;
+    padding-left: 40px;
+    font-family: 'ralewaythin';
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgba(70,70,70,0.8); 
+}
+
+div#add_dialogue>input#tdlTextInput {
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 0px;
+    text-overflow: clip;
+}
+
+#tdlTextInput::placeholder {
+    color: rgba(150, 200, 150, 1.0);
+}
+
+#tdlTextInput.angry::placeholder {
+    color: rgba(250, 150, 150, 1.0);
+}
+
+div#tdlAcceptButton {
+    transition: 0.5s ease-in-out;
+    margin-top: 10px;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    height: 25px;
+    line-height: 30px;
+    padding-left: 0px;
+    background-color: white;
+    border-width: 1x;
+    border: 1px solid rgba(0,0,0, 0.3);
+    color: rgba(70,70,70,0.8); 
+}
+
+div#tdlAcceptButton a {
+    float: left;
+    width: 100%;
+    font-family: 'extravaganzza';
+    color: rgba(70,70,70,0.8); 
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+}
+
+div#tdlAcceptButton:hover {
+    background-color: rgba(200, 250, 200, 0.9);
+}
+
+/* =========================================================================== */
+
+div#weeks_container {
+    transition: 0.5s ease;
+    position: fixed;
+    top: -100vh;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2; 
+}
+
+div#weeks_view {
+    transition: 0.2s;
+    height: 66vh;
+    margin-top: 15vh;
+    width: 92vw;
+    margin-left: 4vw;
+    background-color: rgba(255,255,255,0.96);
+    border-width: 1x;
+    border: 1px solid rgba(0,0,0, 0.3);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+div.weekday {
+    transition: 0.3s;
+    float:left;
+    height:100%;
+    width: 14%;
+    //margin-right: 0.33%;
+    margin-right: 0.28%;
+}
+
+div.weekday:hover {
+    background-color: rgba(255, 255, 200, 0.9);
+}
+
+div#day7 {
+    margin-right: 0px !important;
+}
+
+div.weekday>a:first-child {
+    padding-top: 30px;
+    float: left;
+    line-height: 25px;
+    height: 25px;
+    width: 100%;
+    font-family: 'ralewaythin';
+    text-align: center;
+    font-weight: bolder;
+    color: rgba(70,70,70,0.8); 
+    font-size: 25px;
+}
+
+div.weekday>a:nth-child(2) {
+    float: left;
+    line-height: 15px;
+    height: 15px;
+    width: 100%;
+    font-family: 'ralewaythin';
+    text-align: center;
+    font-weight: bolder;
+    color: rgba(70,70,70,0.8); 
+    font-size: 14px;
+}
+
+div.weekday.today {
+    background-color: rgba(254,237,245,0.6);
+}
+
+ul.daylist {
+    transition: 1s ease-in-out;
+    float: left;
+    height: auto;
+    height: 80%;
+    width: 100%;
+    padding-top: 5px;
+    transition: 0.5s ease-in-out;
+    list-style-position: inside;
+    list-style-type: none;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+
+ul.daylist>li {
+    transition: 0.5s ease-in-out;
+    height: auto;
+    float: left;
+    width: 82%;
+    padding-left: 15%;
+    padding-right: 2%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+ul.daylist>li.remove:hover {
+    background-color: rgba(250, 150, 150, 0.8);
+}
+
+ul.daylist>li a {
+    font-family: 'ralewaythin';
+    color: rgba(70,70,70,0.8);  
+    font-size: 15px;
+}
+
+a.free_day {
+    padding-top: 5px;
+    float: left;
+    width: 94%;
+    font-family: 'ralewaythin';
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 15px;
+}
+
+div#weeks_buttons {
+    pointer-events: all;
+    transition: 1s ease-in-out;
+    margin-top: 1px;
+    float: none;
+    display: block;
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    height: 25px;
+}
+
+div#weeks_buttons>div {
+    transition: 0.5s ease-in-out;
+    margin-left: 0px;
+    float: left;
+    background-color: rgba(230,230,230,0.9);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2); 
+    width: 80px;
+    height: 25px;
+    z-index: -1;
+}
+
+div#weeks_buttons a {
+    float: left;
+    width: 100%;
+    font-family: 'extravaganzza';
+    color: rgba(70,70,70,0.8); 
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+}
+
+div#weeks_remove a {
+    line-height: 5px;
+}
+
+div#weeks_remove:hover, div#weeks_add:hover, div#weeks_zoom:hover, div#weeks_left:hover, div#weeks_right:hover {
+/*    background-color: rgba(254,237,245,1); */
+    background-color: rgba(230,230,230,0.9);
+    background-color: rgba(250,250,250,0.9);    
+}
+
+div#weeks_remove.selected {
+    background-color: rgba(250, 200, 200, 0.9);
+}
+
+div#weeks_add.selected {
+    background-color: rgba(200, 250, 200, 0.9);
+}
+
+/* =========================================================================== */
+
+div#settings_container {
+    transition: 0.5s ease;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 100vw;
+    z-index: 98;
+    pointer-events: 
+}
+
+div#settings {
+    z-index: 99;
+    transition: 1s ease-in-out;
+    margin-top: 260px;
+    width: 450px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255,255,255,0.96);
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2); 
+}
+
+div#settings>div#title>a {
+    display: block;
+    float: none;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 28px;
+    line-height: 46px;
+}
+
+div#settings>div#title>a:last-child {
+    transition: 0.5s ease-in-out;
+    margin-top: -40px;
+    float: right;
+    line-height: 29px;
+    height: 25px;
+    width: 25px;
+    font-size: 16px;
+}
+
+div#exportButton, label#importButton, div#bookmarkEdit {
+    transition: 0.5s ease-in-out;
+    margin-top: 10px;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 0px;
+    background-color: white;
+    border-width: 1x;
+    border: 1px solid rgba(0,0,0, 0.2);
+    color: rgba(70,70,70,0.8);
+}
+
+div#exportButton a, label#importButton a, div#bookmarkEdit a {
+    float: left;
+    width: 100%;
+    font-family: 'ralewaythin';
+    color: rgba(70,70,70,0.9); 
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+}
+
+/* =========================================================================== */
+
+div#edit_container {
+    transition: 0.5s ease;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 100vw;
+    z-index: 99;
+}
+
+div#edit {
+    transition: 0.5s;
+    height: 92vh;
+    margin-top: 4vh;
+    width: 92vw;
+    margin-left: 4vw;
+    background-color: rgba(255,255,255,0.96);
+    border-width: 1x;
+    border: 1px solid rgba(0,0,0, 0.3);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+div#edit > #title > a {
+    font-size: 30px;
+}
+
+div#editSection1, div#editSection2 {
+    border: 1px solid rgba(0,0,0, 0.3);
+    display: block;
+    width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+div#editSection1 {
+    background-color: rgba(254,237,245,1);
+}
+
+div#editSection2 {
+    background-color: rgba(190,225,255,0.4)
+}
+
+div#editSection1 > div, div#editSection2 > div {
+    height: 60px;
+    margin-top: 15px;
+}
+
+div#editSection1 > div > div, div#editSection2 > div > div{
+    height: 60px;
+    width: 250px;
+    float: left;
+    margin-left: 40px;
+}
+
+div#edit input {
+    display: block;
+    float: left;
+    height: 20px;
+    width: 250px;
+    margin-top: 3px;
+    text-align: center;
+    font-family: 'ralewaythin';
+    font-weight: bolder;
+    font-size: 19px;
+    color: rgba(0,0,0,0.9);
+}
+
+div#editSection1 > div > div > input:last-child, div#editSection2 > div > div > input:last-child {
+    font-size: 13px;
+}
+
+div#editSection1 input {
+    color: rgba(200,0,120,0.5);
+}
+
+div#editSection2 input {
+    color: rgba(0,0,120,0.6);
+}
+
+div#editSection1 input::placeholder, div#editSection2 input::placeholder {
+    color: rgba(70,70,70,0.4);
+    font-style: italic;
+}
+
+div.editLine1, div.editLine2, div.editLine3 {
+    margin-top: 20px;
+}
+
+div#bookmarkSubmit{
+    transition: 0.5s ease-in-out;
+    margin-top: 12px;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 0px;
+    background-color: white;
+    border-width: 1x;
+    border: 1px solid rgba(0,0,0, 0.4);
+    color: rgba(70,70,70,0.8);
+}
+
+div#bookmarkSubmit a {
+    float: left;
+    width: 100%;
+    font-family: 'extravaganzza';
+    color: rgba(70,70,70,0.8); 
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    font-family: 'ralewaythin';
+}
